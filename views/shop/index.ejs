@@ -23,6 +23,10 @@
                         </div>
                         <div class="card__actions">
                             <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                            <form action="/admin/delete-product" method="POST">
+                                <input type="hidden" name="productId" value="<%= product.id %>">
+                                <button class="btn" type="submit">Delete</button>
+                            </form>
                         </div>
                     </article>
                 <% } %>
